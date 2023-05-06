@@ -110,12 +110,12 @@ end
 
 function drawUI()
     if (isOpen ~= true) then
-    setupButt = "Close Game Setup"
+    setupButt = "Fermer Modes de jeu"
     self.clearButtons()
     gamePickButtonGo()
     local tooltip1="Pour jouer à Disney Villainous !"
     local tooltip2="Pour jouer à Marvel Villainous !"
-    local tooltip3="PROCHAINEMENT"
+    local tooltip3="Pour jouer à Star Wars Villainous (anglais uniquement)"
     local tooltip4="Pour jouer à Anime Villainous !"
 	local tooltip5="Pour jouer avec des méchants créés par la Communauté !"
     local tooltip6="Pour accéder aux options supplémentaires"
@@ -125,18 +125,18 @@ function drawUI()
     self.createButton({click_function="spawnMar", function_owner=self,
         position={0,0,-3.5}, rotation={0,180,0}, width=1500, height=440,
         color={1,1,0}, font_size=150, tooltip=tooltip2, label="Marvel Villainous"})
-    self.createButton({click_function="", function_owner=self,
+    self.createButton({click_function="spawnStar", function_owner=self,
         position={0,0,-4.5}, rotation={0,180,0}, width=1500, height=440,
         color={0.15,0.25,0.9}, font_size=150, tooltip=tooltip3, label="Star Wars Villainous"})
     self.createButton({click_function="spawnAnime", function_owner=self,
-        position={1,0,0}, rotation={0,180,0}, width=1500, height=440,
-        color={0.625,0.125,0.9375}, font_size=150, tooltip=tooltip4, label="Anime Villainous"})
+        position={0,0,-5.5}, rotation={0,180,0}, width=1500, height=440,
+        color={1,0,0}, font_size=150, tooltip=tooltip4, label="Anime Villainous"})
     self.createButton({click_function="spawnDCus", function_owner=self,
         position={0,0,-6.5}, rotation={0,180,0}, width=1500, height=440,
         color={0.625,0.125,0.9375}, font_size=150, tooltip=tooltip5, label="Méchants customs"})
     self.createButton({click_function="listOpt", function_owner=self,
         position={0,0,-7.5}, rotation={0,180,0}, width=1500, height=440,
-        color={1,1,1}, font_size=150, tooltip=tooltip6, label="◀   Options supplémentaires      "})
+        color={1,1,1}, font_size=150, tooltip=tooltip6, label="◀   Plus d'options      "})
     isOpen = true
     else
     self.clearButtons()
