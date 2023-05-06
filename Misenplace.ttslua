@@ -93,7 +93,7 @@ anime_list = {
 
 function onLoad()
   isOpen = false
-  setupButt = "Open Game Setup"
+  setupButt = "Modes de Jeu"
   gamePickButtonGo()
   self.interactable = false
 end
@@ -136,7 +136,7 @@ function drawUI()
     isOpen = true
     else
     self.clearButtons()
-    setupButt = "Open Game Setup"
+    setupButt = "Modes de Jeu"
     gamePickButtonGo()
     end
 end
@@ -256,7 +256,7 @@ function onSave()
 end
 
 function spawnDis()
-    setupButt = "Open Game Setup"
+    setupButt = "Modes de Jeu"
     clearTable()
     tableDisney()
     obj = getObjectFromGUID(dVilSelc)
@@ -293,7 +293,7 @@ function spawnDis()
 end
 
 function spawnMar()
-    setupButt = "Open Game Setup"
+    setupButt = "Modes de Jeu"
     clearTable()
     tableMarvel()
     obj = getObjectFromGUID(mVilSelc)
@@ -330,7 +330,7 @@ function spawnMar()
 end
 
 function spawnStar()
-    setupButt = "Open Game Setup"
+    setupButt = "Modes de Jeu"
     clearTable()
     tableStar()
     obj = getObjectFromGUID(starSelc)
@@ -363,7 +363,7 @@ function spawnStar()
 end
 
 function spawnAnime()
-    setupButt = "Open Game Setup"
+    setupButt = "Modes de Jeu"
     isCus = false
     broadcastToAll("Anime Villainous is rated 13+ for complexity and imagery\r\n")
     clearTable()
@@ -394,7 +394,7 @@ end
 function spawnDCus()
     spawnDis()
     isCus = false
-    setupButt = "Open Game Setup"
+    setupButt = "Modes de Jeu"
     setNotes("")
     self.clearButtons()
     gamePickButtonGo()
@@ -412,7 +412,7 @@ function spawnDCus()
 end
 
 function spawnCom()
-    setupButt = "Open Game Setup"
+    setupButt = "Modes de Jeu"
     isList = false
     self.clearButtons()
     gamePickButtonGo()
@@ -467,7 +467,7 @@ function spawnCom()
 end
 
 function resetHands()
-    setupButt = "Open Game Setup"
+    setupButt = "Modes de Jeu"
     isList = false
     self.clearButtons()
     gamePickButtonGo()
