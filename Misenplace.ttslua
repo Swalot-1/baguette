@@ -113,26 +113,30 @@ function drawUI()
     setupButt = "Close Game Setup"
     self.clearButtons()
     gamePickButtonGo()
-    local tooltip1="Spawn Disney Villainous"
-    local tooltip2="Spawn Marvel Villainous"
-    local tooltip3="Spawn Star Wars Villainous"
-    local tooltip4="Spawn Custom Villains"
-    local tooltip5="Toggle Extra Options"
+    local tooltip1="Pour jouer à Disney Villainous !"
+    local tooltip2="Pour jouer à Marvel Villainous !"
+    local tooltip3="PROCHAINEMENT"
+    local tooltip4="Pour jouer à Anime Villainous !"
+	local tooltip5="Pour jouer avec des méchants créés par la Communauté !"
+    local tooltip6="Pour accéder aux options supplémentaires"
     self.createButton({click_function="spawnDis", function_owner=self,
         position={0,0,-2.5}, rotation={0,180,0}, width=1500, height=440,
         color={0,.75,0}, font_size=150, tooltip=tooltip1, label="Disney Villainous"})
     self.createButton({click_function="spawnMar", function_owner=self,
         position={0,0,-3.5}, rotation={0,180,0}, width=1500, height=440,
         color={1,1,0}, font_size=150, tooltip=tooltip2, label="Marvel Villainous"})
-    self.createButton({click_function="spawnStar", function_owner=self,
+    self.createButton({click_function="", function_owner=self,
         position={0,0,-4.5}, rotation={0,180,0}, width=1500, height=440,
         color={0.15,0.25,0.9}, font_size=150, tooltip=tooltip3, label="Star Wars Villainous"})
-    self.createButton({click_function="listCus", function_owner=self,
-        position={0,0,-5.5}, rotation={0,180,0}, width=1500, height=440,
-        color={0.625,0.125,0.9375}, font_size=150, tooltip=tooltip4, label="     Custom Villains  ▶"})
-    self.createButton({click_function="listOpt", function_owner=self,
+    self.createButton({click_function="spawnAnime", function_owner=self,
+        position={1,0,0}, rotation={0,180,0}, width=1500, height=440,
+        color={0.625,0.125,0.9375}, font_size=150, tooltip=tooltip4, label="Anime Villainous"})
+    self.createButton({click_function="spawnDCus", function_owner=self,
         position={0,0,-6.5}, rotation={0,180,0}, width=1500, height=440,
-        color={1,1,1}, font_size=150, tooltip=tooltip5, label="◀   Extra Options      "})
+        color={0.625,0.125,0.9375}, font_size=150, tooltip=tooltip5, label="Méchants customs"})
+    self.createButton({click_function="listOpt", function_owner=self,
+        position={0,0,-7.5}, rotation={0,180,0}, width=1500, height=440,
+        color={1,1,1}, font_size=150, tooltip=tooltip6, label="◀   Options supplémentaires      "})
     isOpen = true
     else
     self.clearButtons()
@@ -146,18 +150,18 @@ function listOpt()
     self.clearButtons()
     gamePickButtonGo()
     drawUI()
-    local tooltip21="Spawn Competitive Assets"
-    local tooltip22="Reset Hands"
-    local tooltip23="Reduce Objects"
+    local tooltip21="Pour jouer de manière compétitive !"
+    local tooltip22="Pour replacer les mains à leur position initiale"
+    local tooltip23="Pour réduire le nombre d'objets à l'écran"
     self.createButton({click_function="spawnCom", function_owner=self,
-        position={2.7,0,-4.5}, rotation={0,180,0}, width=1000, height=440,
-        color={0,1,1}, font_size=150, tooltip=tooltip21, label="Competitive\nAssets"})
-    self.createButton({click_function="resetHands", function_owner=self,
         position={2.7,0,-5.5}, rotation={0,180,0}, width=1000, height=440,
-        color={1,0,0}, font_size=150, tooltip=tooltip22, label="Reset\nHands"})
-    self.createButton({click_function="clearRoom", function_owner=self,
+        color={0,1,1}, font_size=150, tooltip=tooltip21, label="Matériel\nCompétitif"})
+    self.createButton({click_function="resetHands", function_owner=self,
         position={2.7,0,-6.5}, rotation={0,180,0}, width=1000, height=440,
-        color={1,0.5,0}, font_size=150, tooltip=tooltip23, label="Reduce\nObjects"})
+        color={1,0,0}, font_size=150, tooltip=tooltip22, label="Replacer\nles Mains"})
+    self.createButton({click_function="clearRoom", function_owner=self,
+        position={2.7,0,-7.5}, rotation={0,180,0}, width=1000, height=440,
+        color={1,0.5,0}, font_size=150, tooltip=tooltip23, label="Optimiser\nPerformance"})
     isList = true
     else
     self.clearButtons()
@@ -365,7 +369,6 @@ end
 function spawnAnime()
     setupButt = "Modes de Jeu"
     isCus = false
-    broadcastToAll("Anime Villainous is rated 13+ for complexity and imagery\r\n")
     clearTable()
     tableAnime()
     obj = getObjectFromGUID(aniSelc)
